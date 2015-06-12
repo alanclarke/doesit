@@ -1,0 +1,17 @@
+var _isEmpty = require('lodash-compat/lang/isempty')
+var error = require('../lib/error')
+
+var assertions = {
+  empty: function isEmpty (value) {
+    if (!_isEmpty(value)) {
+      throw error(String(value) + ' is not empty', value)
+    }
+  },
+  notEmpty: function isNotEmpty (value) {
+    if (_isEmpty(value)) {
+      throw new Error(String(value) + ' is empty')
+    }
+  }
+}
+
+module.exports = assertions
