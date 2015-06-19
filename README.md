@@ -96,12 +96,14 @@ does({ a: 1, b: 1 }).contain({ a: 1 })
 does({ a: 1, b: 1 }).notContain({ a: 1 })
 does({ a: 1, b: 2}).haveKeys(['a', 'b'])
 does({ a: 1, b: 2}).notHaveKeys(['a', 'b'])
-does({ a: { b: { c: 1}}}).have('a') // true
-does({ a: { b: { c: 1}}}).have('a.b.c') // true
-does({ a: { b: { c: 1}}}).have(['a' 'b' 'c']) // true
-does({ a: { b: { c: 1}}}).have('a.b.c', 1) // true
-does({ a: { b: { c: 1}}}).notHave('a.b.c', 2) // true
-does({ a: { b: { c: 1}}}).notHave('a') // true
+does({ a: 1, b: 2}).haveValues([1, 2])
+does({ a: 1, b: 2}).notHaveValues([3, 4])
+does({ a: { b: { c: 1}}}).have('a')
+does({ a: { b: { c: 1}}}).have('a.b.c')
+does({ a: { b: { c: 1}}}).have(['a', 'b', 'c'])
+does({ a: { b: { c: 1}}}).have('a.b.c', 1)
+does({ a: { b: { c: 1}}}).notHave('a.b.c', 2)
+does({ a: { b: { c: 1}}}).notHave('a')
 ```
 
 ### Functions

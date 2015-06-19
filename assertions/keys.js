@@ -1,8 +1,8 @@
-var _keys = require('lodash-compat/object/keys')
-var _pick = require('lodash-compat/object/pick')
+var getKeys = require('lodash-compat/object/keys')
+var pick = require('lodash-compat/object/pick')
 
 function hasKeys (obj, keys) {
-  return _keys(_pick(obj, keys)).length === keys.length
+  return getKeys(pick(obj, keys)).length === keys.length
 }
 
 var assertions = {
