@@ -1,0 +1,37 @@
+{
+  "name": "doesit",
+  "version": "0.0.0",
+  "description": "a concise, expressive, extensible and ubiquitous assertion library",
+  "main": "./doesit.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "karma start --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanclarke/doesit.git"
+  },
+  "keywords": [
+    "assertion",
+    "assert"
+  ],
+  "author": "self@alz.so",
+  "bugs": {
+    "url": "https://github.com/alanclarke/doesit/issues"
+  },
+  "homepage": "https://github.com/alanclarke/doesit#readme",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "karma": "^0.12.31",
+    "karma-browserify": "^4.1.2",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-expect": "^1.1.0",
+    "karma-mocha": "^0.1.10",
+    "mocha": "^2.2.4"
+  },
+  "dependencies": {
+    "lodash-compat": "^3.8.0"
+  }
+}
