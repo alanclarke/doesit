@@ -1,9 +1,4 @@
-// String
-// Arrays
-// object
-// keys
 /* global describe, it */
-
 var expect = require('expect.js')
 var is = require('../lib/doesit'), does = is
 

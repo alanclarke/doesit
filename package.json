@@ -1,6 +1,6 @@
 {
   "name": "doesit",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "a concise, expressive, extensible and ubiquitous assertion library",
   "main": "./doesit.js",
   "directories": {
@@ -17,7 +17,7 @@
     "assertion",
     "assert"
   ],
-  "author": "hi@alz.so",
+  "author": "self@alz.so",
   "bugs": {
     "url": "https://github.com/alanclarke/doesit/issues"
   },

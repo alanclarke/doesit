@@ -1,37 +1,39 @@
 # doesit
 
-Doesit aims to be a concise, expressive, extensible and ubiquitous assertion library.
+Doesit aims to be a concise, expressive, extensible and ubiquitous assertion library
 
 - concise: convenient, non-verbose api
-- expressive: idiomatic syntax
 - extensible: very easy to extend and write plugins for
 - ubiquitous: works in all browsers and platforms
+- expressive: idiomatic syntax
 
 ## why?
-Apart from conciseness, which isn't a bad aim, I feel that *doesit's* syntax is pleasantly idiomatic.
+Doesit has a simple plugin architecture and works in all browsers including ie6
 
+In addition, it is concise, and idiomatic:
+
+Here, the test description expresses the expectation that x equals five, and the function body checks if the expected value actually *does* equal five:
 ```javascript
-// expectation
+// assertion lib x
+// state expectation
 it("should equal five", function () {
-  // check whether it actually does
+  // see if it does
   expect(x).toEqual(5)
 })
 ```
 
-In the above code, the function body expresses an expectation, but really, it checks if the expected value actually *is* true. Therefore, you could argue that the following is more idiomatic:
-
+You could argue that the following is therefore more idiomatic:
 ```javascript
+// doesit
 var is = require('./lib/doesit'), does = is
-// expectation
+// state expectation
 it("should equal five", function () {
-  // check whether it actually does
+  // see if it does
   does(x).eql(5)
 })
 ```
 
-
-## API
-
+## Usage
 ```javascript
 var is = require('./lib/doesit'), does = is
 is(x).true()
@@ -44,7 +46,8 @@ Adding new assertions is pretty easy and just involves calling *extend* with you
 ```javascript
 var is = require('./lib/doesit'), does = is
 
-// note this returns the extended lib without modifying the original
+// note:
+// this returns the extended lib without modifying the original instance
 is = does = is.extend({
   palindrome: function (value) {
     if (!isPalindrome(value)) {
@@ -63,6 +66,7 @@ it('should consider "hannah" a palindrome', function () {
 })
 
 ```
+## API
 
 ### Equality
 ```javascript
@@ -96,12 +100,14 @@ does({ a: 1, b: 1 }).contain({ a: 1 })
 does({ a: 1, b: 1 }).notContain({ a: 1 })
 does({ a: 1, b: 2}).haveKeys(['a', 'b'])
 does({ a: 1, b: 2}).notHaveKeys(['a', 'b'])
-does({ a: { b: { c: 1}}}).have('a') // true
-does({ a: { b: { c: 1}}}).have('a.b.c') // true
-does({ a: { b: { c: 1}}}).have(['a' 'b' 'c']) // true
-does({ a: { b: { c: 1}}}).have('a.b.c', 1) // true
-does({ a: { b: { c: 1}}}).notHave('a.b.c', 2) // true
-does({ a: { b: { c: 1}}}).notHave('a') // true
+does({ a: 1, b: 2}).haveValues([1, 2])
+does({ a: 1, b: 2}).notHaveValues([3, 4])
+does({ a: { b: { c: 1}}}).have('a')
+does({ a: { b: { c: 1}}}).have('a.b.c')
+does({ a: { b: { c: 1}}}).have(['a', 'b', 'c'])
+does({ a: { b: { c: 1}}}).have('a.b.c', 1)
+does({ a: { b: { c: 1}}}).notHave('a.b.c', 2)
+does({ a: { b: { c: 1}}}).notHave('a')
 ```
 
 ### Functions

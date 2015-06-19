@@ -1,9 +1,9 @@
-var _get = require('lodash-compat/object/get')
-var _isUndefined = require('lodash-compat/lang/isundefined')
+var get = require('lodash-compat/object/get')
+var isUndefined = require('lodash-compat/lang/isundefined')
 
 function has (obj, attr, value) {
-  var result = _get(obj, attr)
-  return !_isUndefined(value) ? result === value : !_isUndefined(result)
+  var result = get(obj, attr)
+  return !isUndefined(value) ? result === value : !isUndefined(result)
 }
 
 var assertions = {
