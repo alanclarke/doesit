@@ -1,6 +1,6 @@
 {
   "name": "doesit",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "a concise, expressive, extensible and ubiquitous assertion library",
   "main": "./doesit.js",
   "directories": {
